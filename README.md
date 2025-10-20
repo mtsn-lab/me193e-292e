@@ -2,7 +2,7 @@
 Welcome to the official GitHub repository for ME193E/292E! This repository serves as the central hub for all course materials, including lecture slides, example code, and project specifications.
 
 ## Current Course Instance: **Spring 2026 (Sp26)**
-All active students should primarily navigate to the following directory for time-sensitive materials like slides and projects: [Course Instance Link: `./course_instances/Sp26/`](./course_instances/Sp26/)
+All active students should primarily navigate to the following directory for time-sensitive materials like slides and projects: `./course_instances/Sp26/`
 
 ### Key Content for Sp26:
 * Lecture Slides: Found under `./course_instances/Sp26/lectures/`.
@@ -14,13 +14,13 @@ These materials are continuously refined and form the core pedagogical content o
 ### 1. Jupyter Notebooks (Modeling and Analysis)
 Use these notebooks to explore fundamental concepts, data analysis, and energy system modeling.
 
-* Location: [`./universal/jupyter_notebooks/`](./universal/jupyter_notebooks/)
+* Location: `./universal/jupyter_notebooks/`
 * How to Run: We recommend using a virtual environment or a service like Google Colab/Jupyter Hub for seamless execution.
 
 ### 2. Coding Fundamentals
 Basic examples and syntax reminders for running Fortran code, which we use for high-performance simulation.
 
-* Location: [`./universal/fortran_basics/`](./universal/fortran_basics/)
+* Location: `./universal/fortran_basics/`
 * Tooling: Ensure you have a Fortran compiler installed (e.g., `gfortran`). You can compile these files using the command: `gfortran filename.f90 -o output_name && ./output_name`
 
 ## Usage and Contributing
@@ -36,4 +36,5 @@ This repository is maintained by the course instructor Prof. Thomas Schutzius an
 * Universal content should be updated directly in the `./universal/` directory.
 
 **Instructor**: Dr. Thomas Schutzius
+
 **Contact**: tschutzius@berkeley.edu
