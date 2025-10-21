@@ -1,6 +1,41 @@
 # me193e-292e: Next Generation Data Centers and Energy Management Systems
 Welcome to the official GitHub repository for ME193E/292E! This repository serves as the central hub for all course materials, including lecture slides, example code, and project specifications.
 
+## Directory
+```
+.
+├── .gitignore
+├── readme.md
+├── license
+├── docs/
+│   └── syllabus_template.pdf
+│
+├── universal/
+│   ├── jupyter_notebooks/
+│   │   ├── module_1_intro.ipynb
+│   │   └── ...
+│   │
+│   └── fortran_basics/
+│       ├── simple_thermal_model.f90
+│       └── compile_run.sh
+│
+└── course_instances/
+    ├── sp26/                 # Spring 2026
+    │   ├── syllabus.pdf
+    │   ├── lectures/
+    │   │   ├── 01_intro/
+    │   │   │   ├── slides.tex
+    │   │   └── ...
+    │   │
+    │   └── projects/
+    │       ├── project_1/
+    │       └── ...
+    │
+    └── fa26/                 # Fall 2026
+        ├── lectures/
+        └── projects/
+   ```
+
 ## Current Course Instance: **Spring 2026 (Sp26)**
 All active students should primarily navigate to the following directory for time-sensitive materials like slides and projects: `./course_instances/Sp26/`
 

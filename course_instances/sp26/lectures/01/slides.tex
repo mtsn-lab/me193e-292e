@@ -1,0 +1,155 @@
+% File: slides.tex
+% Location: ./course_instances/Sp26/lectures/01_intro/slides.tex
+
+\documentclass[10pt]{beamer}
+
+% =======================================================================
+% 1. THEMES AND APPEARANCE
+% =======================================================================
+
+% Theme: Boadilla is a clean, standard theme with a visible sidebar.
+\usetheme{Boadilla}
+
+% Color Theme: Seahorse is professional (blue/teal) and high-contrast.
+\usecolortheme{seahorse}
+
+% Font and Encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Graphics and Math Packages (essential for a technical course)
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+% Code Highlighting (Crucial for showing Fortran snippets)
+\usepackage{listings}
+\lstset{
+    language=Fortran,
+    basicstyle=\ttfamily\footnotesize, % Smaller, fixed-width font
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color[gray]{0.95}, % Light grey background for code
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    rulecolor=\color{gray},
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red}
+}
+
+
+% =======================================================================
+% 2. DOCUMENT METADATA (Change for each lecture)
+% =======================================================================
+
+\title[Lecture 1: Intro]{Introduction to Next Generation Data Centers}
+%\subtitle{Data Center Architecture and Energy Challenges}
+\author[Thomas Schutzius]{Prof. Thomas Schutzius}
+\institute{Department of Mechanical Engineering\\
+    \textit{University of California, Berkeley}}
+\date{Spring 2026 -- Lecture 1}
+
+
+% =======================================================================
+% 3. BEGIN DOCUMENT
+% =======================================================================
+
+\begin{document}
+
+% --- Title Page ---
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% --- Table of Contents (Outline) ---
+\begin{frame}{Lecture Outline}
+    \tableofcontents
+\end{frame}
+
+
+% =======================================================================
+% 4. CONTENT SECTIONS
+% =======================================================================
+
+\section{The Data Center Energy Landscape}
+
+\begin{frame}{Current Energy Challenges}
+    \begin{itemize}
+        \item Global data center energy consumption is rapidly growing.
+        \item **PUE (Power Usage Effectiveness)** is the key metric:
+        $$
+        \text{PUE} = \frac{\text{Total Facility Energy}}{\text{IT Equipment Energy}}
+        $$
+        \pause % Reveals the next item on a click
+        \item Cooling load dominates non-IT energy (fans, chillers, pumps).
+        \item Goal: Drive PUE closer to $1.0$ through efficient design.
+    \end{itemize}
+\end{frame}
+
+\section{Computational Models}
+
+\subsection{Thermal Modeling}
+
+\begin{frame}{Modeling Heat Transfer (Example)}
+    \begin{block}{Heat Dissipation in a Server Rack}
+        The transient temperature $T$ of a component is modeled by:
+        $$
+        m c_p \frac{dT}{dt} = \dot{Q}_{\text{gen}} - \dot{Q}_{\text{conv}}
+        $$
+        \begin{itemize}
+            \item $m$: Mass of the component (kg)
+            \item $c_p$: Specific heat capacity (J/kg $\cdot$ K)
+            \end{itemize}
+    \end{block}
+\end{frame}
+
+\subsection{Fortran Code Example}
+
+\begin{frame}{Example: Basic Fortran Simulation}
+    \frametitle{Running a Simple Energy Loop}
+
+    \begin{itemize}
+        \item We use Fortran for high-speed, parallel thermal simulations.
+    \end{itemize}
+
+% \begin{lstlisting}[caption=Initialization Loop (basic\_loop.f90)]
+%program basic_loop
+ % implicit none
+%  integer :: i
+%  real :: total_energy = 0.0, power_draw = 1500.0 ! Watts
+
+%  do i = 1, 10
+%    total_energy = total_energy + power_draw
+%  end do
+  
+%  print *, "Total Energy over 10 seconds: ", total_energy, " Joules"
+%end program basic_loop
+%	\end{lstlisting}
+    
+\end{frame}
+
+% --- Conclusion Slide ---
+\section{Conclusion}
+
+\begin{frame}{Summary and Next Steps}
+    \frametitle{Wrap-up}
+    \begin{itemize}
+        \item Next Gen DCs require co-design of IT and Cooling systems.
+        \item **Key Takeaway**: Energy efficiency is a system-level problem.
+    \end{itemize}
+    \vfill % Add vertical space
+    \centering
+    \alert{Reading for Next Week: Chapter 2 on Advanced Cooling Techniques}
+\end{frame}
+
+\end{document}
