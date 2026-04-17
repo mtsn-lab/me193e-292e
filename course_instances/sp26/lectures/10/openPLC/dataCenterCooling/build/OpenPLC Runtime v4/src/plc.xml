@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6_0201">
+  <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2026-04-16T13:53:00"/>
+  <contentHeader name="Unnamed" modificationDateTime="2026-04-16T13:53:00">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="16" y="16"/>
+      </fbd>
+      <ld>
+        <scaling x="16" y="16"/>
+      </ld>
+      <sfc>
+        <scaling x="16" y="16"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes/>
+    <pous>
+      <pou name="main" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="CRAC_Fan_Status">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="Temp_High_Alarm">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="sensor_temp" address="%MW0">
+              <type>
+                <INT/>
+              </type>
+            </variable>
+            <variable name="fan_speed" address="%QW0">
+              <type>
+                <INT/>
+              </type>
+            </variable>
+            <variable name="sensor_power" address="%MW1">
+              <type>
+                <INT/>
+              </type>
+            </variable>
+            <variable name="overheat_alarm" address="%QX0.0">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <FBD>
+            <block localId="4543488" typeName="GT" executionOrderId="0" height="120" width="84">
+              <position x="352" y="-48"/>
+              <inputVariables>
+                <variable formalParameter="IN1">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48"/>
+                    <connection refLocalId="2770594">
+                      <position x="336" y="80"/>
+                      <position x="352" y="80"/>
+                      <position x="352" y="0"/>
+                      <position x="368" y="0"/>
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable formalParameter="IN2">
+                  <connectionPointIn>
+                    <relPosition x="0" y="96"/>
+                    <connection refLocalId="5446740">
+                      <position x="336" y="128"/>
+                      <position x="296" y="128"/>
+                      <position x="296" y="48"/>
+                      <position x="256" y="48"/>
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables/>
+              <outputVariables>
+                <variable formalParameter="OUT">
+                  <connectionPointOut>
+                    <relPosition x="84" y="48"/>
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable localId="868851" executionOrderId="0" height="32" width="128" negated="false">
+              <position x="176" y="96"/>
+              <connectionPointOut>
+                <relPosition x="112" y="16"/>
+              </connectionPointOut>
+              <expression>CRAC_Fan_Status</expression>
+            </inVariable>
+            <inVariable localId="2770594" executionOrderId="0" height="32" width="128" negated="false">
+              <position x="64" y="-32"/>
+              <connectionPointOut>
+                <relPosition x="112" y="16"/>
+              </connectionPointOut>
+              <expression>sensor_temp</expression>
+            </inVariable>
+            <inVariable localId="5446740" executionOrderId="0" height="32" width="128" negated="false">
+              <position x="144" y="32"/>
+              <connectionPointOut>
+                <relPosition x="112" y="16"/>
+              </connectionPointOut>
+              <expression>3500</expression>
+            </inVariable>
+            <outVariable localId="4459010" executionOrderId="0" height="32" width="128" negated="false">
+              <position x="512" y="96"/>
+              <connectionPointIn>
+                <relPosition x="0" y="16"/>
+                <connection refLocalId="868851">
+                  <position x="512" y="112"/>
+                  <position x="288" y="112"/>
+                </connection>
+              </connectionPointIn>
+              <expression>Temp_High_Alarm</expression>
+            </outVariable>
+            <outVariable localId="5789790" executionOrderId="0" height="32" width="128" negated="false">
+              <position x="400" y="256"/>
+              <connectionPointIn>
+                <relPosition x="0" y="16"/>
+              </connectionPointIn>
+              <expression>fan_speed</expression>
+            </outVariable>
+            <outVariable localId="1043503" executionOrderId="0" height="32" width="128" negated="false">
+              <position x="576" y="0"/>
+              <connectionPointIn>
+                <relPosition x="0" y="16"/>
+                <connection refLocalId="4543488" formalParameter="OUT">
+                  <position x="576" y="16"/>
+                  <position x="498" y="16"/>
+                  <position x="498" y="80"/>
+                  <position x="420" y="80"/>
+                </connection>
+              </connectionPointIn>
+              <expression>overheat_alarm</expression>
+            </outVariable>
+          </FBD>
+        </body>
+        <documentation>
+          <xhtml:p><![CDATA[ ]]></xhtml:p>
+        </documentation>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Config0">
+        <resource name="Res0">
+          <task name="task0" priority="1" interval="T#20ms">
+            <pouInstance name="instance0" typeName="main"/>
+          </task>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>
